@@ -1,6 +1,8 @@
 package Sorts;
-//i and j propogate in the same direction
-//pivot always first index
+/* i and j propogate in the same direction
+*  pivot always first index
+*  for nested-while j = i - 1
+*/
 public class QuickSortLomuto{
     private static void swap(int[] A, int i, int j){
         int tmp = A[i];
@@ -16,7 +18,7 @@ public class QuickSortLomuto{
     private static void lomuto(int[] arr, int first, int last){
         //Base Condition
         if( first >= last) return;
-        //Partition array.
+        //Partition array. First is the pivot
         int i = first, j = first;
         for( i = first; i <= last; i ++){
             if( arr[i] < arr[first]){
@@ -25,7 +27,7 @@ public class QuickSortLomuto{
             }
         }
         swap(arr, j, first);
-        
+
 
         lomuto(arr, first, j-1);
         lomuto(arr, j+1, last);

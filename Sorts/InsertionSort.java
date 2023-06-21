@@ -9,7 +9,7 @@ public class InsertionSort
         for(i = 0; i < arr.length ; i++){
             j = i - 1;
             tmp = arr[i];
-            while( j >= 0 && tmp < arr[j] ){
+            while( j >= 0 && arr[j] > tmp  ){
                 arr[j + 1] = arr[j];
                 j--;
             }
